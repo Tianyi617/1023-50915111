@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>打磚塊遊戲</title>
+    <style>
+        body {
+            display: flex;
+            flex-direction: column; /* 垂直排列 */
+            justify-content: center; /* 垂直置中 */
+            align-items: center; /* 水平置中 */
+            height: 100vh; /* 設置高度為視口高度 */
+            margin: 0; /* 去掉默認邊距 */
+            background-color: #f0f0f0; /* 設置背景顏色 */
+        }
+
+        canvas {
+            background-color: #387bf8; /* 設置畫布背景顏色 */
+            border: 2px solid #000; /* 為畫布添加邊框 */
+            margin-bottom: 20px; /* 增加畫布底部的間距 */
+        }
+
+        #themeSelection {
+            display: flex; /* 設置為 flex 盒子 */
+            margin-bottom: 20px; /* 增加按鈕底部的間距 */
+        }
+
+        button {
+            margin: 0 10px; /* 按鈕間距 */
+            border: 2px solid #000; /* 添加外框 */
+            color: #000; /* 設置字體顏色為深色 */
+            padding: 10px 20px; /* 添加內邊距 */
+            font-size: 16px; /* 設置字體大小 */
+            cursor: pointer; /* 設置鼠標樣式 */
+        }
+
+        button:active {
+            background-color: #005f8b; /* 點擊時改變背景顏色 */
+            transform: translateY(0); /* 點擊時恢復位置 */
+        }
+
+        .color-button1 {
+            background-color: #BBFFFF; /* 設置背景顏色 */
+        }
+
+        .color-button2 {
+            background-color: #A3D1D1; /* 設置背景顏色 */
+        }
+
+        .color-button3 {
+            background-color: #d3ffce; /* 設置背景顏色 */
+        }
+    </style>
+</head>
+
+<body>
+    <canvas id="gameCanvas" width="800" height="600"></canvas>
+    <div id="themeSelection">
+        <button onclick="setBackground('night')">背景1</button>
+        <button onclick="setBackground('forest')">背景2</button>
+        <button class="color-button1" onclick="setBodyBackgroundColor('#BBFFFF')">背景顏色1</button>
+        <button class="color-button2" onclick="setBodyBackgroundColor('#A3D1D1')">背景顏色2</button>
+        <button class="color-button3" onclick="setBodyBackgroundColor('#d3ffce')">背景顏色3</button>
+    </div>
+    <!-- 背景音樂 -->
+    <audio id="backgroundMusic" src="background.mp3" loop></audio>
+    <!-- 音效 -->
+    <audio id="hitSound" src="hit.mp3" loop></audio>
+    <!-- 引入外部 JavaScript 文件 -->
+    <script src="game.js"></script>
+</body>
+
+</html>
